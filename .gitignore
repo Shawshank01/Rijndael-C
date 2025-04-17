@@ -1,3 +1,7 @@
+main
+*.o
+*.so
+
 # macOS System Files
 .DS_Store
 .AppleDouble
