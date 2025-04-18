@@ -1,9 +1,3 @@
-/*
- * Diwen Xiao
-   D24128462
- * along with a brief description of this code.
- */
-
 #ifndef RIJNDAEL_H
 #define RIJNDAEL_H
 
@@ -15,6 +9,7 @@
  * entry point to the library for programmes hoping to use it to
  * encrypt or decrypt data)
  */
+
 unsigned char *aes_encrypt_block(unsigned char *plaintext, unsigned char *key);
 unsigned char *aes_decrypt_block(unsigned char *ciphertext, unsigned char *key);
 
