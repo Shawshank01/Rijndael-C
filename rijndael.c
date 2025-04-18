@@ -16,6 +16,9 @@ static unsigned char gmul(unsigned char a, unsigned char b) {
   return p;
 }
 
+static const unsigned char Rcon[11] = {0x00, 0x01, 0x02, 0x04, 0x08, 0x10,
+                                       0x20, 0x40, 0x80, 0x1B, 0x36};
+
 static const unsigned char s_box[256] = {
     0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b,
     0xfe, 0xd7, 0xab, 0x76, 0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0,
@@ -190,7 +193,7 @@ unsigned char *expand_key(unsigned char *cipher_key) {
 
   memcpy(expanded, cipher_key, 16);
   int bytes_generated = 16;
-  int rcon_index = 1;
+  int rcon_index = 0;
 
   while (bytes_generated < 176) {
     for (i = 0; i < 4; i++) {
@@ -208,8 +211,7 @@ unsigned char *expand_key(unsigned char *cipher_key) {
         temp[i] = s_box[temp[i]];
       }
 
-      temp[0] ^= (1 << (rcon_index - 1));  // Rcon
-      rcon_index++;
+      temp[0] ^= Rcon[++rcon_index];  // Rcon
     }
 
     for (i = 0; i < 4; i++) {
