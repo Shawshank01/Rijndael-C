@@ -1,3 +1,9 @@
+/*
+ * Diwen Xiao
+   D24128462
+ * along with a brief description of this code.
+*/
+
 #ifndef RIJNDAEL_H
 #define RIJNDAEL_H
 
