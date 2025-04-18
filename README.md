@@ -1,5 +1,5 @@
 # Secure Systems Development - Assignment 2
-**AES-128 Implementation in C**  
+**AES-128 Implementation in C**
 Author: Diwen Xiao (D24128462)
 
 ---
