@@ -1,8 +1,11 @@
 /*
  * Diwen Xiao
    D24128462
- * along with a brief description of this code.
-*/
+ * This header file defines the interface for the AES-128 implementation.
+ * It declares the main encryption and decryption functions that allow
+ * external programs to use the AES algorithm to process 128-bit data blocks.
+ * Supporting constants such as BLOCK_SIZE and the BLOCK_ACCESS macro are also defined here.
+ */
 
 #ifndef RIJNDAEL_H
 #define RIJNDAEL_H

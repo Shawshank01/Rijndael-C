@@ -1,8 +1,19 @@
 /*
  * Diwen Xiao
    D24128462
- * along with a brief description of this code.
-*/
+ * This file implements the AES-128 (Rijndael) block cipher in C.
+ * It includes all necessary operations for encryption and decryption
+ * of a single 128-bit block using a 128-bit key. Core components
+ * include SubBytes, ShiftRows, MixColumns, AddRoundKey, and key expansion.
+ * Both encryption and decryption use round-based transformations
+ * following the FIPS-197 specification.
+ */
+
+#include "rijndael.h"
+
+#include <stdio.h>  // Added for printf and memcmp
+#include <stdlib.h>
+#include <string.h>
 
 static unsigned char gmul(unsigned char a, unsigned char b) {
   unsigned char p = 0;
@@ -42,12 +53,6 @@ static const unsigned char s_box[256] = {
     0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
     0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f,
     0xb0, 0x54, 0xbb, 0x16};
-
-#include "rijndael.h"
-
-#include <stdio.h>  // Added for printf and memcmp
-#include <stdlib.h>
-#include <string.h>
 
 void sub_bytes(unsigned char *block) {
   for (int i = 0; i < BLOCK_SIZE; i++) {
