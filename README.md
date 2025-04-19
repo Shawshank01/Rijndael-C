@@ -1,5 +1,6 @@
 # Secure Systems Development - Assignment 2
 **AES-128 Implementation in C with Python-based Testing**
+<!-- Project internal name: Rijndael-C -->
 Author: Diwen Xiao (D24128462)
 
 ---
