@@ -10,5 +10,11 @@ jobs:
         run: |
           sudo apt install -y build-essential python-is-python3
           make
+      - name: Install Python dependencies
+        run: |
+          sudo apt install -y python3-pip
+          pip install pytest
+      - name: Run Python AES tests
+        run: pytest tests
       - name: Run C AES test
         run: ./main
