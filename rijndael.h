@@ -1,6 +1,4 @@
 /*
- * Diwen Xiao
-   D24128462
  * This header file defines the interface for the AES-128 implementation.
  * It declares the main encryption and decryption functions that allow
  * external programs to use the AES algorithm to process 128-bit data blocks.

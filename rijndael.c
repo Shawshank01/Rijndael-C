@@ -1,6 +1,4 @@
 /*
- * Diwen Xiao
-   D24128462
  * This file implements the AES-128 (Rijndael) block cipher in C.
  * It includes all necessary operations for encryption and decryption
  * of a single 128-bit block using a 128-bit key. Core components
