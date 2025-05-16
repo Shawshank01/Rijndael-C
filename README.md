@@ -1,4 +1,4 @@
-# Project internal name: Rijndael-C
+# Rijndael C
 **AES-128 Implementation in C with Python-based Testing**
 
 ---
