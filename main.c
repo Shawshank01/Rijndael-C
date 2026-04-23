@@ -10,7 +10,6 @@ void print_128bit_block(unsigned char *block) {
       unsigned char value = BLOCK_ACCESS(block, i, j);
 
       // Print spaces before small numbers to ensure that everything is aligned
-      // and looks nice
       if (value < 10) printf(" ");
 
       if (value < 100) printf(" ");
